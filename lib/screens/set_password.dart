@@ -90,7 +90,7 @@ class _SetPasswordState extends State<SetPassword> {
                                 height: 30,
 
                                 width: screenWidth-36,
-                                child: TextField( style: TextStyle(fontFamily: 'popins-s'),decoration: InputDecoration(
+                                child: TextField( obscureText:true,style: TextStyle(fontFamily: 'popins-s'),decoration: InputDecoration(
                                   disabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.25,color: Colors.grey)),
                                   border: UnderlineInputBorder(borderSide: BorderSide(width: 0.25,color: Colors.grey)),
                                   focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.25,color: Colors.grey)),
@@ -110,7 +110,7 @@ class _SetPasswordState extends State<SetPassword> {
                                 height: 30,
 
                                 width: screenWidth-36,
-                                child: TextField( maxLength: 10,keyboardType: TextInputType.number,style: TextStyle(fontFamily: 'popins-s'),decoration: InputDecoration(
+                                child: TextField(obscureText:true, maxLength: 10,style: TextStyle(fontFamily: 'popins-s'),decoration: InputDecoration(
                                   counterText: "",
                                   disabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.25,color: Colors.grey)),
                                   border: UnderlineInputBorder(borderSide: BorderSide(width: 0.25,color: Colors.grey)),
