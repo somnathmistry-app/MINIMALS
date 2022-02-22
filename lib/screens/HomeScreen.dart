@@ -12,6 +12,7 @@ import 'package:minimals/Helpers/font_scheme.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shimmer/shimmer.dart';
 import 'SearchScreen.dart';
+import 'collection_detail_screen.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -211,6 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               return Container(
 
                                 decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(12)),
                            image: DecorationImage(image: NetworkImage(snapshot.data![index].image),fit: BoxFit.cover)
                         ),
                                   child:Stack(
@@ -315,9 +317,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Expanded(child: Column(
                       children: [
-                        ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                            child: Image.asset("asset/images/home/Essentials.png", width: screenWidth*0.5, height: screenWidth*0.6, fit: BoxFit.cover,)
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>CollectionDetail()));
+                          },
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                              child: Image.asset("asset/images/home/Essentials.png", width: screenWidth*0.5, height: screenWidth*0.6, fit: BoxFit.cover,)
+                          ),
                         ),
                         gap,
                         ClipRRect(
