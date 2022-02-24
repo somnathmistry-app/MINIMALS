@@ -7,6 +7,7 @@ import 'package:minimals/screens/Randomiser.dart';
 import 'package:minimals/screens/ShoppingBag.dart';
 
 import 'lets_shuffle.dart';
+import 'menu_screen.dart';
 class MainContainer extends StatefulWidget {
   const MainContainer({Key? key}) : super(key: key);
 
@@ -22,7 +23,7 @@ class _MainContainerState extends State<MainContainer>  with SingleTickerProvide
     Favorite(),
     Randomiser(),
     ShoppingBag(),
-    Account(),
+    MenuScreen(),
   ];
   @override
   void initState() {
@@ -112,7 +113,7 @@ class _MainContainerState extends State<MainContainer>  with SingleTickerProvide
                               currentTab = 4;
                             });*/
                             Navigator.push(context, MaterialPageRoute(
-                                builder: (_)=>Account()
+                                builder: (_)=>MenuScreen()
                             ));
                           },
                           child: Image.asset("asset/images/icons/user.png", color: currentTab == 4 ?newPink:Colors.grey, width: 20)
