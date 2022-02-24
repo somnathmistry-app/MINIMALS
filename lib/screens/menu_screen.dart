@@ -25,96 +25,341 @@ class _MenuScreenState extends State<MenuScreen> {
             color: Colors.black
         ),),
       ),
-      body: SingleChildScrollView(
+      body: Column(
+        children: [
+          Expanded(
 
-         child: Column(
-           children: [
-             SizedBox(height: 25,),
-             Padding(
-               padding: const EdgeInsets.only(left:10,right: 10),
-               child: Row(
-                 children: [
-                   Text("GENERAL", style: TextStyle(
-                       fontFamily: "popins-r",
-                       fontSize: 14,
-                       fontWeight: FontWeight.w900,
-                       color: Colors.black,
-                       letterSpacing: 0.9,
-                       height: 0.7
-                   ),),
-                 ],
-               ),
-             ),
-             Padding(
-               padding: const EdgeInsets.only(left:10,right: 10),
-               child: Divider(),
-             ),
-             Padding(
-               padding: const EdgeInsets.only(left:30,right: 10),
-               child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-
-                   SizedBox(height: 15,),
-
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                     crossAxisAlignment: CrossAxisAlignment.center,
+             child: Column(
+               children: [
+                 SizedBox(height: 25,),
+                 Padding(
+                   padding: const EdgeInsets.only(left:10,right: 10),
+                   child: Row(
                      children: [
-                       Text("Wallets", style: TextStyle(
+                       Text("GENERAL", style: TextStyle(
                            fontFamily: "popins-r",
-                           fontSize: 13,
+                           fontSize: 14,
                            fontWeight: FontWeight.w900,
-                           color: Colors.grey,
-                           height: 0.7,letterSpacing: 0.9
-
-                       ),
-                       ),
-                       Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                           color: Colors.black,
+                           letterSpacing: 0.9,
+                           height: 0.7
+                       ),),
                      ],
                    ),
-
-                   SizedBox(height: 5,),
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                     crossAxisAlignment: CrossAxisAlignment.center,
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.only(left:10,right: 10),
+                   child: Divider(),
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.only(left:30,right: 10),
+                   child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
-                       Text("Wallets", style: TextStyle(
-                           fontFamily: "popins-r",
-                           fontSize: 13,
-                           fontWeight: FontWeight.w900,
-                           color: Colors.grey,
-                           height: 0.7,letterSpacing: 0.9
 
+                       SizedBox(height: 8,),
+
+                       InkWell(
+                         onTap: (){
+                           Navigator.pushNamed(context, "/myOrder");
+                         },
+                         child: Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           crossAxisAlignment: CrossAxisAlignment.center,
+                           children: [
+                             Text("ORDERS", style: TextStyle(
+                                 fontFamily: "popins-r",
+                                 fontSize: 13,
+                                 fontWeight: FontWeight.w900,
+                                 color: Colors.grey,
+                                 height: 0.7,letterSpacing: 0.9
+
+                             ),
+                             ),
+                             Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                           ],
+                         ),
                        ),
+
+                       SizedBox(height: 5,),
+                       InkWell(
+                         onTap: (){
+                           Navigator.pushNamed(context, "/returns");
+                         },
+                         child: Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           crossAxisAlignment: CrossAxisAlignment.center,
+                           children: [
+                             Text("RETURNS", style: TextStyle(
+                                 fontFamily: "popins-r",
+                                 fontSize: 13,
+                                 fontWeight: FontWeight.w900,
+                                 color: Colors.grey,
+                                 height: 0.7,letterSpacing: 0.9
+
+                             ),
+                             ),
+                             Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                           ],
+                         ),
                        ),
-                       Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+
+                       SizedBox(height: 5,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                           Text("FAVOURITES", style: TextStyle(
+                               fontFamily: "popins-r",
+                               fontSize: 13,
+                               fontWeight: FontWeight.w900,
+                               color: Colors.grey,
+                               height: 0.7,letterSpacing: 0.9
+
+                           ),
+                           ),
+                           Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                         ],
+                       ),
+
                      ],
                    ),
+                 ),
 
-                   SizedBox(height: 5,),
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                     crossAxisAlignment: CrossAxisAlignment.center,
+
+                 SizedBox(height: 35,),
+                 Padding(
+                   padding: const EdgeInsets.only(left:10,right: 10),
+                   child: Row(
                      children: [
-                       Text("Wallets", style: TextStyle(
+                       Text("ACCOUNT", style: TextStyle(
                            fontFamily: "popins-r",
-                           fontSize: 13,
+                           fontSize: 14,
                            fontWeight: FontWeight.w900,
-                           color: Colors.grey,
-                           height: 0.7,letterSpacing: 0.9
-
-                       ),
-                       ),
-                       Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                           color: Colors.black,
+                           letterSpacing: 0.9,
+                           height: 0.7
+                       ),),
                      ],
                    ),
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.only(left:10,right: 10),
+                   child: Divider(),
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.only(left:30,right: 10),
+                   child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
 
-                 ],
-               ),
+                       SizedBox(height: 8,),
+
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                           Text("PROFILE", style: TextStyle(
+                               fontFamily: "popins-r",
+                               fontSize: 13,
+                               fontWeight: FontWeight.w900,
+                               color: Colors.grey,
+                               height: 0.7,letterSpacing: 0.9
+
+                           ),
+                           ),
+                           Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                         ],
+                       ),
+
+                       SizedBox(height: 5,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                           Text("ADDRESSES", style: TextStyle(
+                               fontFamily: "popins-r",
+                               fontSize: 13,
+                               fontWeight: FontWeight.w900,
+                               color: Colors.grey,
+                               height: 0.7,letterSpacing: 0.9
+
+                           ),
+                           ),
+                           Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                         ],
+                       ),
+
+                       SizedBox(height: 5,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                           Text("SECURITY", style: TextStyle(
+                               fontFamily: "popins-r",
+                               fontSize: 13,
+                               fontWeight: FontWeight.w900,
+                               color: Colors.grey,
+                               height: 0.7,letterSpacing: 0.9
+
+                           ),
+                           ),
+                           Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                         ],
+                       ),
+
+                       SizedBox(height: 5,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                           Text("CREDITS", style: TextStyle(
+                               fontFamily: "popins-r",
+                               fontSize: 13,
+                               fontWeight: FontWeight.w900,
+                               color: Colors.grey,
+                               height: 0.7,letterSpacing: 0.9
+
+                           ),
+                           ),
+                           Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                         ],
+                       ),
+
+                     ],
+                   ),
+                 ),
+
+
+                 SizedBox(height: 35,),
+                 Padding(
+                   padding: const EdgeInsets.only(left:10,right: 10),
+                   child: Row(
+                     children: [
+                       Text("SUPPORT", style: TextStyle(
+                           fontFamily: "popins-r",
+                           fontSize: 14,
+                           fontWeight: FontWeight.w900,
+                           color: Colors.black,
+                           letterSpacing: 0.9,
+                           height: 0.7
+                       ),),
+                     ],
+                   ),
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.only(left:10,right: 10),
+                   child: Divider(),
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.only(left:30,right: 10),
+                   child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+
+                       SizedBox(height: 8,),
+
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                           Text("TERMS OF USE", style: TextStyle(
+                               fontFamily: "popins-r",
+                               fontSize: 13,
+                               fontWeight: FontWeight.w900,
+                               color: Colors.grey,
+                               height: 0.7,letterSpacing: 0.9
+
+                           ),
+                           ),
+                           Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                         ],
+                       ),
+
+                       SizedBox(height: 5,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                           Text("PRIVACY POLICY", style: TextStyle(
+                               fontFamily: "popins-r",
+                               fontSize: 13,
+                               fontWeight: FontWeight.w900,
+                               color: Colors.grey,
+                               height: 0.7,letterSpacing: 0.9
+
+                           ),
+                           ),
+                           Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                         ],
+                       ),
+
+                       SizedBox(height: 5,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                           Text("RETURN POLICY", style: TextStyle(
+                               fontFamily: "popins-r",
+                               fontSize: 13,
+                               fontWeight: FontWeight.w900,
+                               color: Colors.grey,
+                               height: 0.7,letterSpacing: 0.9
+
+                           ),
+                           ),
+                           Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                         ],
+                       ),
+
+                       SizedBox(height: 5,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                           Text("CUSTOMER CARE", style: TextStyle(
+                               fontFamily: "popins-r",
+                               fontSize: 13,
+                               fontWeight: FontWeight.w900,
+                               color: Colors.grey,
+                               height: 0.7,letterSpacing: 0.9
+
+                           ),
+                           ),
+                           Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+                         ],
+                       ),
+
+                     ],
+                   ),
+                 ),
+               ],
              ),
-           ],
-         ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom:18.0,right: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top:4.0),
+                  child: Text("Logout", style: TextStyle(
+                      fontFamily: "popins-r",
+                      fontSize: 13,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.grey,
+                      height: 0.7,letterSpacing: 0.9
+
+                  ),
+                  ),
+                ),
+                SizedBox(width: 10,),
+                Icon(Icons.arrow_forward,color: Colors.grey,size: 18,)
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

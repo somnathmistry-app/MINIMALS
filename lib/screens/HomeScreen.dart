@@ -353,6 +353,43 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               gap,
+              Container(
+
+                height: 260,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8,right: 8),
+                  child: ListView.builder(
+                    itemCount: 5,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    physics: AlwaysScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 4,right: 4),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: screenWidth*0.65,
+                              height: 260,
+
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(8)),
+                                  color: Colors.grey,
+
+                                  image: DecorationImage(image: AssetImage('asset/images/home/Luxe.png'),fit: BoxFit.cover)
+                              ),
+                            ),
+
+
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+              gap,
 
               Row(
                 children: [

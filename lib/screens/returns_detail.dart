@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as gb;
 
 import 'package:timeline_tile/timeline_tile.dart';
-class OrderDetails extends StatefulWidget {
-  const OrderDetails({Key? key}) : super(key: key);
+class ReturnDetails extends StatefulWidget {
+  const ReturnDetails({Key? key}) : super(key: key);
 
   @override
-  _OrderDetailsState createState() => _OrderDetailsState();
+  _ReturnDetailsState createState() => _ReturnDetailsState();
 }
 
-class _OrderDetailsState extends State<OrderDetails> {
+class _ReturnDetailsState extends State<ReturnDetails> {
   List<String> imageUrl = [
     "asset/images/blacktShirt.png",
     "asset/images/sauvetShirt.png",
@@ -26,7 +26,7 @@ class _OrderDetailsState extends State<OrderDetails> {
         leading: IconButton(icon: Icon(Icons.arrow_back_ios, color: Colors.black,),onPressed: (){
           Navigator.pop(context);
         },),
-        title: Text("ORDER STATUS", style: TextStyle(
+        title: Text("RETURN STATUS", style: TextStyle(
             fontFamily: "gotham",
             fontSize: 18,
             fontWeight: FontWeight.w900,
@@ -48,10 +48,10 @@ class _OrderDetailsState extends State<OrderDetails> {
                     },
                     child: Card(
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(12),topLeft: Radius.circular(12)
+                          topRight: Radius.circular(12),topLeft: Radius.circular(12)
                       )),
                       elevation: 4,
-                      child: Column(
+                      child:Column(
                         children: [
 
                           Padding(
@@ -98,7 +98,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Order ID', style: TextStyle(
+                                    Text('Return ID', style: TextStyle(
                                         fontFamily: "gotham",
                                         fontSize: 11,
                                         fontWeight: FontWeight.w700,
@@ -225,7 +225,30 @@ class _OrderDetailsState extends State<OrderDetails> {
                                           ],
                                         ),
                                         SizedBox(height: 10,),
-
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(width: 5,),
+                                            Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Text('Order ID', style: TextStyle(
+                                                    fontFamily: "gotham",
+                                                    fontSize: 11,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: Colors.black
+                                                ),),
+                                                SizedBox(height: 0,),
+                                                Text('12358944', style: TextStyle(
+                                                    fontFamily: "gotham",
+                                                    fontSize: 13,
+                                                    fontWeight: FontWeight.w900,
+                                                    color: Colors.black
+                                                ),),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -293,8 +316,8 @@ class _OrderDetailsState extends State<OrderDetails> {
 
                         endChild:  _RightChild(
 
-                          title: 'Order Recieved',
-                          message: 'We have received your order.',
+                          title: 'Return Initiated',
+                          message: 'We have initiated your return request.',
                         ),
                         beforeLineStyle: const LineStyle(
                           thickness: 4,
@@ -311,33 +334,14 @@ class _OrderDetailsState extends State<OrderDetails> {
                         ),
                         endChild: const _RightChild(
 
-                          title: 'Processed',
-                          message: 'Your order has been processed.',
+                          title: 'Evaluation',
+                          message: 'Your return parcel has been recieved by us.',
                         ),
                         beforeLineStyle: const LineStyle(
                           color: Colors.blue,
                         ),
                       ),
-                      TimelineTile(
-                        alignment: TimelineAlign.start,
-                        lineXY: 0.1,
-                        indicatorStyle: const IndicatorStyle(
-                          width: 15,
-                          color: Colors.blue,
-                          padding: EdgeInsets.all(4),
-                        ),
-                        endChild: const _RightChild(
 
-                          title: 'Shipped',
-                          message: 'Your order has been shipped',
-                        ),
-                        beforeLineStyle: const LineStyle(
-                          color: Colors.blue,
-                        ),
-                        afterLineStyle: const LineStyle(
-                          color: Colors.blue,
-                        ),
-                      ),
                       TimelineTile(
                         alignment: TimelineAlign.start,
                         lineXY: 0.1,
@@ -350,8 +354,8 @@ class _OrderDetailsState extends State<OrderDetails> {
                         endChild:  _RightChild(
                           disabled: false,
 
-                          title: 'Delivered',
-                          message: 'Your order has been delivered.',
+                          title: 'Return Accepted',
+                          message: 'Your return request has been accepted.',
                         ),
                         beforeLineStyle: const LineStyle(
                           color: Colors.blue,
@@ -359,203 +363,12 @@ class _OrderDetailsState extends State<OrderDetails> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 40,),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
 
-                      Text('Order Summary', style: TextStyle(
-                          fontFamily: "gotham",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.black
-                      ),),
-                    ],
-                  ),
-                  Divider(),
-                  SizedBox(height: 10,),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Mode of Payment', style: TextStyle(
-                              fontFamily: "gotham",
-                              fontSize: 14,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.black
-                          ),),
-
-                          Text('VISA ending with 6960', style: TextStyle(
-                              fontFamily: "gotham",
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black
-                          ),),
-                          SizedBox(height: 15,),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Order Value', style: TextStyle(
-                                  fontFamily: "gotham",
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black
-                              ),),
-                              SizedBox(width: 15,),
-                              Text('₹ 2,999.00', style: TextStyle(
-                                  fontFamily: "gotham",
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.black
-                              ),),
-                            ],
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Shipping', style: TextStyle(
-                                  fontFamily: "gotham",
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black
-                              ),),
-                              SizedBox(width: 15,),
-                              Text('FREE', style: TextStyle(
-                                  fontFamily: "gotham",
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.black
-                              ),),
-                            ],
-                          ),
-
-                        ],
-                      ),
-                    ],
-                  ),
-                  Divider(),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Total', style: TextStyle(
-                          fontFamily: "gotham",
-                          fontSize: 13,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black
-                      ),),
-                      SizedBox(width: 15,),
-                      Text('₹ 2,999.00', style: TextStyle(
-                          fontFamily: "gotham",
-                          fontSize: 13,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.black
-                      ),),
-                    ],
-                  ),
-                  SizedBox(height: 40,),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-
-                      Text('Shipping Address', style: TextStyle(
-                          fontFamily: "gotham",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.black
-                      ),),
-                    ],
-                  ),
-                  Divider(),
-                  SizedBox(height:10),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.4),
-                      borderRadius: BorderRadius.all(Radius.circular(8))
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Shipping Address', style: TextStyle(
-                            fontFamily: "gotham",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.black
-                        ),),
-                        SizedBox(height: 10,),
-                        Text('Block W,uppal southend', style: TextStyle(
-                            fontFamily: "gotham",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black
-                        ),),
-                        Text('Sector 49,Gurugram', style: TextStyle(
-                            fontFamily: "gotham",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black
-                        ),),
-                        Text('Haryana 122018', style: TextStyle(
-                            fontFamily: "gotham",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black
-                        ),),
-                        Text('India', style: TextStyle(
-                            fontFamily: "gotham",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black
-                        ),),
-                        Text('+91 58759612', style: TextStyle(
-                            fontFamily: "gotham",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black
-                        ),),
-                      ],
-                    ),
-                  )
                 ],
               ),
             ),
-            SizedBox(height: 40,),
-            Container(
-              width: 180,
-              child: gb.NeumorphicButton(
 
-
-                onPressed: () {
-
-                },
-                style: gb.NeumorphicStyle(
-                  depth: 10,
-                  intensity: 0.86,
-                  surfaceIntensity: 0.5,
-                  shape: gb.NeumorphicShape.flat,
-                  boxShape:
-                  gb.NeumorphicBoxShape.roundRect(BorderRadius.circular(20),),
-                  color: Colors.black,
-
-                  /* shadowLightColor: Colors.white*/
-                ),
-                //margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                padding: EdgeInsets.symmetric(horizontal: 18, vertical: 15),
-                child:  Center(
-                  child: Text("Download Invoice", style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: "gotham",
-                      fontSize: 11,
-                      fontWeight: FontWeight.w700,
-                      height: 0.9
-                  ),),
-                ),),
-            ),
-            SizedBox(height: 40,),
+            SizedBox(height: 80,),
             Text('Do you need any help?', style: TextStyle(
                 fontFamily: "gotham",
                 fontSize: 14,
@@ -606,9 +419,9 @@ class _RightChild extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                    fontFamily: "gotham",
-                    fontSize: 13,
-                    fontWeight: FontWeight.w900,
+                  fontFamily: "gotham",
+                  fontSize: 13,
+                  fontWeight: FontWeight.w900,
                   color: disabled
                       ? const Color(0xFFBABABA)
                       : Colors.black,

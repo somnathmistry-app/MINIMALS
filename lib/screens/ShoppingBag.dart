@@ -54,7 +54,8 @@ class _ShoppingBagState extends State<ShoppingBag> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                 productWidget("asset/images/Grey TShirt.jpeg", "MAUVE T-SHIRT", "M", "BLACK", "1", "₹2,999"),
+                 productWidget("asset/images/Grey TShirt.jpeg", "MAUVE T-SHIRT", "M", "BLACK", "1",
+                     "₹2,999"),
                   Padding(
                     padding: const EdgeInsets.only(left: 15,right: 15),
                     child: Divider(),

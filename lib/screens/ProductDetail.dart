@@ -501,6 +501,39 @@ class _ProductDetailState extends State<ProductDetail> {
             SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.only(left:18.0),
+              child: Row(
+                children: [
+                  Text('Shipping Availability',
+                    style: TextStyle(fontFamily: 'popins-s',fontSize: 13,height: 1.2),),
+                  ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left:18.0,right: 18,top: 10),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+
+                  suffixIcon: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right:18.0),
+                        child: Text('CHECK',style: TextStyle(fontWeight: FontWeight.w700),),
+                      ),
+                    ],
+                  )
+                ),
+              ),
+            ),
+            SizedBox(height: 5,),
+            Center(
+              child: Text('Please enter pincode to check delivery options',
+                style: TextStyle(fontSize: 12,height: 1.2),),
+            ),
+            SizedBox(height: 20,),
+            Padding(
+              padding: const EdgeInsets.only(left:18.0),
               child: Text('SIMILAR RECOMMENDATIONS',style: TextStyle(fontSize: 16,fontFamily: 'popins-b'),),
             ),
             SizedBox(height: 20,),
